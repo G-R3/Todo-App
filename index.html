@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+
+<!-- fontawesome icons -->
+    <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+    integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
+    crossorigin="anonymous"
+  />
+</head>
+<body>
+    <h1 id="heading">Todo</h1>
+    <div class="input-field">
+        <input type="text" name="todo-input" class="todo-input"
+        placeholder="todo"
+        >
+        <button class="submit-todo-button">
+            <i class="fas fa-plus"></i>
+        </button>
+    </div>
+
+    <div class="todo-list-container">
+        <ul class="todo-list">
+            <!-- todos will go here -->
+            <div class="todo-item">
+                <li>Sample</li>
+                <button class="checkmark"><i class="fas fa-check"></i></button>
+                <button class="trashcan"><i class="fas fa-trash"></i></button>
+            </div>
+        </ul>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
