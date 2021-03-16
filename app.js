@@ -1,6 +1,7 @@
 const todoList = document.querySelector(".todo-list");
 const submitTodo = document.querySelector(".submit-todo-button");
 
+// saves todo items to local storage
 function saveTodos(todo) {
   let todos;
   if (localStorage.getItem("todos") === null) {
@@ -12,6 +13,7 @@ function saveTodos(todo) {
   localStorage.setItem("todos", JSON.stringify(todos));
 }
 
+// adds todo items in local storage to list upon window load
 function loadTodos() {
   let todos;
   if (localStorage.getItem("todos") === null) {
@@ -36,6 +38,7 @@ function loadTodos() {
   });
 }
 
+// removes a todo item from the list and storage
 function removeTodo(todo) {
   let todos = JSON.parse(localStorage.getItem("todos"));
   if (todos.includes(todo.firstElementChild.innerText)) {
@@ -45,6 +48,7 @@ function removeTodo(todo) {
   }
 }
 
+// adds a new todo item to the list
 function newTodo(e) {
   e.preventDefault();
   let todo = document.querySelector(".todo-input");
@@ -68,15 +72,16 @@ function newTodo(e) {
   todo.value = "";
 }
 
+// used to complete or remove a todo item
 todoList.addEventListener("click", function (e) {
   let target = e.target;
-  console.log(target);
   if (e.target.classList.contains("trashcan")) {
     removeTodo(target.parentNode);
   } else if (e.target.classList.contains("checkmark")) {
     target.parentNode.firstElementChild.classList.toggle("completed");
   }
 });
-
+// used to add new todo items
 submitTodo.addEventListener("click", newTodo);
+// used to load local storage
 window.addEventListener("load", loadTodos);
