@@ -8,12 +8,16 @@ body {
   box-sizing: border-box;
   background-color: #fff;
 }
+#form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 #heading {
   font-size: 3.5em;
-  text-align: center;
 }
 .input-field {
-  /* text-align: center; */
   display: flex;
   justify-content: center;
   border-radius: 5px;
@@ -29,7 +33,6 @@ body {
   font-family: monospace, sans-serif;
   border-radius: 5px 0 0 5px;
   border: none;
-  /* flex: 1; */
 }
 .submit-todo-button {
   padding: 0.8em 1.8em;
@@ -42,6 +45,13 @@ body {
   color: #fff;
   background-color: #202020;
   cursor: pointer;
+}
+#error-display {
+  color: #ff0000;
+  font-size: 0.8em;
+  font-weight: 700;
+  margin: 0.8em 0;
+  display: none;
 }
 .todo-list-container {
   width: 100%;
