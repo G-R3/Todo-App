@@ -19,6 +19,14 @@ body {
 }
 .input-field {
   display: flex;
+  align-items: center;
+}
+.github-link {
+  color: #202020;
+  margin-right: 1.3em;
+}
+.input-container {
+  display: flex;
   justify-content: center;
   border-radius: 5px;
   box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.1);
@@ -101,6 +109,3 @@ body {
   text-decoration: line-through;
   opacity: 0.5;
 }
-/* .deleted {
-  opacity: 0;
-} */

@@ -59,7 +59,6 @@ function newTodo(e) {
   let todo = document.querySelector(".todo-input");
   let error = document.querySelector("#error-display");
 
-  console.log(todo.value);
   if (todo.value.trim() !== "") {
     error.style.display = "none";
     createTodoTemplate(todo.value.trim());
