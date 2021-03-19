@@ -24,7 +24,7 @@ body {
 }
 .todo-input {
   width: 100%;
-  padding: 9px;
+  padding: 0.6em;
   font-size: 1.3em;
   font-family: monospace, sans-serif;
   border-radius: 5px 0 0 5px;
@@ -32,9 +32,15 @@ body {
   /* flex: 1; */
 }
 .submit-todo-button {
-  padding: 0 22px;
+  padding: 0.8em 1.8em;
   border: none;
   border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: all 350ms ease;
+}
+.submit-todo-button:hover {
+  color: #fff;
+  background-color: #202020;
   cursor: pointer;
 }
 .todo-list-container {
@@ -44,12 +50,17 @@ body {
 }
 .todo-list {
   list-style: none;
-  padding: 8px;
+  padding: 0.5em;
 }
 .todo-item {
   display: flex;
-  margin-bottom: 12px;
-  padding: 3px 0;
+  align-items: center;
+  margin-bottom: 0.8em;
+  padding: 0.2em 0;
+  border-bottom: 2px solid transparent;
+  transition: border 350ms ease;
+}
+.todo-item:hover {
   border-bottom: 2px solid rgba(0, 0, 0, 0.1);
 }
 .todo-item li {
@@ -57,15 +68,24 @@ body {
   font-size: 1.2em;
 }
 .todo-item button {
-  padding: 7px 12px;
+  padding: 0.8em 1em;
   border: none;
   cursor: pointer;
+  transition: all 350ms ease;
 }
 .checkmark {
   color: #00e400;
 }
+.checkmark:hover {
+  color: #fff;
+  background-color: #00e400;
+}
 .trashcan {
   color: #ff0000;
+}
+.trashcan:hover {
+  color: #fff;
+  background-color: #ff0000;
 }
 .completed {
   text-decoration: line-through;
