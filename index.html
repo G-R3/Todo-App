@@ -16,18 +16,21 @@
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <h1 id="heading">Todo</h1>
-    <form class="input-field">
-      <input
-        type="text"
-        name="todo-input"
-        class="todo-input"
-        placeholder="todo"
-      />
-      <button class="submit-todo-button">
-        <i class="fas fa-plus"></i>
-      </button>
-    </form>
+    <div id="form-container">
+      <h1 id="heading">Todo</h1>
+      <form class="input-field">
+        <input
+          type="text"
+          name="todo-input"
+          class="todo-input"
+          placeholder="Enter a todo"
+        />
+        <button class="submit-todo-button">
+          <i class="fas fa-plus"></i>
+        </button>
+      </form>
+      <span id="error-display">Invalid input</span>
+    </div>
 
     <div class="todo-list-container">
       <ul class="todo-list">
