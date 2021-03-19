@@ -57,12 +57,16 @@ function removeTodo(todo) {
 function newTodo(e) {
   e.preventDefault();
   let todo = document.querySelector(".todo-input");
+  let error = document.querySelector("#error-display");
+
   console.log(todo.value);
   if (todo.value.trim() !== "") {
-    console.log("yy");
+    error.style.display = "none";
     createTodoTemplate(todo.value.trim());
     saveTodos(todo.value);
     todo.value = "";
+  } else {
+    error.style.display = "inline";
   }
 }
 
