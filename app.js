@@ -1,6 +1,23 @@
 const todoList = document.querySelector(".todo-list");
 const submitTodo = document.querySelector(".submit-todo-button");
 
+// create a todo item template
+function createTodoTemplate(todo) {
+  let div = document.createElement("div");
+  let li = document.createElement("li");
+  let checkmarkBtn = document.createElement("button");
+  let trashcanBtn = document.createElement("button");
+
+  li.innerText = todo;
+  checkmarkBtn.classList.add("fas", "fa-check", "checkmark");
+  trashcanBtn.classList.add("fas", "fa-trash", "trashcan");
+  div.append(li);
+  div.append(checkmarkBtn);
+  div.append(trashcanBtn);
+  div.classList.add("todo-item");
+  todoList.append(div);
+}
+
 // saves todo items to local storage
 function saveTodos(todo) {
   let todos;
@@ -22,19 +39,7 @@ function loadTodos() {
     todos = JSON.parse(localStorage.getItem("todos"));
   }
   todos.forEach(function (todo) {
-    let div = document.createElement("div");
-    let li = document.createElement("li");
-    let checkmarkBtn = document.createElement("button");
-    let trashcanBtn = document.createElement("button");
-
-    li.innerText = todo;
-    checkmarkBtn.classList.add("fas", "fa-check", "checkmark");
-    trashcanBtn.classList.add("fas", "fa-trash", "trashcan");
-    div.append(li);
-    div.append(checkmarkBtn);
-    div.append(trashcanBtn);
-    div.classList.add("todo-item");
-    todoList.append(div);
+    createTodoTemplate(todo);
   });
 }
 
@@ -52,24 +57,13 @@ function removeTodo(todo) {
 function newTodo(e) {
   e.preventDefault();
   let todo = document.querySelector(".todo-input");
-
-  let div = document.createElement("div");
-  let li = document.createElement("li");
-
-  let checkmarkBtn = document.createElement("button");
-  let trashcanBtn = document.createElement("button");
-
-  li.innerText = todo.value;
-  saveTodos(todo.value);
-  checkmarkBtn.classList.add("fas", "fa-check", "checkmark");
-  trashcanBtn.classList.add("fas", "fa-trash", "trashcan");
-  div.append(li);
-  div.append(checkmarkBtn);
-  div.append(trashcanBtn);
-  div.classList.add("todo-item");
-  todoList.append(div);
-
-  todo.value = "";
+  console.log(todo.value);
+  if (todo.value.trim() !== "") {
+    console.log("yy");
+    createTodoTemplate(todo.value.trim());
+    saveTodos(todo.value);
+    todo.value = "";
+  }
 }
 
 // used to complete or remove a todo item
