@@ -48,7 +48,10 @@ function removeTodo(todo) {
   let todos = JSON.parse(localStorage.getItem("todos"));
   if (todos.includes(todo.firstElementChild.innerText)) {
     todos.splice(todos.indexOf(todo.firstElementChild.innerText), 1);
-    todo.remove();
+    todo.classList.add("deleted");
+    setTimeout(function () {
+      todo.remove();
+    }, 300);
     localStorage.setItem("todos", JSON.stringify(todos));
   }
 }

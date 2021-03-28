@@ -76,7 +76,7 @@ body {
   margin-bottom: 0.8em;
   padding: 0.2em 0;
   border-bottom: 2px solid transparent;
-  transition: border 350ms ease;
+  transition: all 350ms ease;
 }
 .todo-item:hover {
   border-bottom: 2px solid rgba(0, 0, 0, 0.1);
@@ -108,4 +108,8 @@ body {
 .completed {
   text-decoration: line-through;
   opacity: 0.5;
+}
+.deleted {
+  transform: translateY(-50px);
+  opacity: 0;
 }
